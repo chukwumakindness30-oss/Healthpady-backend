@@ -1,0 +1,12 @@
+app.get("/api/recommendations/:userId", (req, res) => {
+          const { userId } = req.params;
+          
+          res.json({
+          message: "Recommendation retrieved successfully",
+          recommendation: {
+          userId: userId,
+          doctorSpecialty: "General Practitioner",
+          advice: "Please consult a qualified doctor for proper evaluation."
+          }
+          });
+          });
