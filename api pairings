@@ -1,0 +1,17 @@
+app.post("/api/pairings", (req, res) => {
+const { userId, doctorId } = req.body;
+
+if (!userId || !doctorId) {
+return res.status(400).json({
+error: "User ID and doctor ID are required"
+});
+}
+
+res.status(201).json({
+message: "Doctor and patient paired successfully",
+pairing: {
+userId,
+doctorId
+}
+});
+});
