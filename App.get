@@ -1,0 +1,6 @@
+app.get("/api/challenges", (req, res) => {
+        res.json({
+        message: "Health challenges retrieved successfully",
+        challenges: []
+        });
+        });
