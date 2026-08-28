@@ -1,0 +1,18 @@
+app.post("/api/notifications", (req, res) => {
+const { userId, doctorId, message } = req.body;
+
+if (!userId || !doctorId || !message) {
+return res.status(400).json({
+error: "User ID, doctor ID, and message are required"
+});
+}
+
+res.status(201).json({
+message: "Notification sent successfully",
+notification: {
+userId,
+doctorId,
+message
+}
+});
+});
