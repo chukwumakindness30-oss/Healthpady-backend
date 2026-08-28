@@ -1,0 +1,19 @@
+
+app.post("/api/summaries", (req, res) => {
+const { userId, complaint, summary } = req.body;
+
+if (!userId || !complaint || !summary) {
+return res.status(400).json({
+error: "User ID, complaint, and summary are required"
+});
+}
+
+res.status(201).json({
+message: "Complaint summary created successfully",
+summary: {
+userId,
+complaint,
+summary
+}
+});
+});
